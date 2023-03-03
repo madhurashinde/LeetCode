@@ -1,0 +1,49 @@
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+var luckyNumbers  = function(matrix) {
+ 
+
+let max_array=[]
+    let min_array=[]
+    let min_val =0
+    let max_val =0
+    for(let i=0;i<(matrix.length);i++){
+        min_val = matrix[i][0]
+        for(let j=0;j<(matrix[i].length);j++){
+            //console.log(matrix[i][j])
+            
+            if(matrix[i][j]<min_val){
+                min_val= matrix[i][j]
+            }
+            //console.log(j, i)
+            
+            }
+            min_array.push(min_val)
+        }
+    for(let i=0;i<matrix[0].length;i++){
+        max_val = matrix[0][i]
+        for(let j=0;j<matrix.length;j++){
+            
+            //console.log(max_val)
+            if(matrix[j][i]>max_val){
+                max_val = matrix[j][i]
+                //console.log(max_val)
+
+        }
+    }
+        
+        //console.log(min_array)
+        max_array.push(max_val)
+        //console.log(max_array)
+    }
+    //console.log(min_array)
+    //console.log(max_array)
+    let final_val=[]
+    for(let i =0;i<max_array.length;i++){
+        if(min_array.includes(max_array[i]))
+                final_val.push(max_array[i])
+    }
+    return (final_val)
+}
