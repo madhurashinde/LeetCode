@@ -2,6 +2,8 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+
+//pushing to github
 var getConcatenation = function(nums) {
     let ans =[]
     while(ans.length<(2*nums.length)){
